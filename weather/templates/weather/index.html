@@ -1,27 +1,28 @@
 
 {% load staticfiles %}
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Futura" type="text/css">
 <link rel="stylesheet" type="text/css" href="{% static "weather/styles.css" %}"/>
+<script src="{% static "weather/js.js" %}" type="text/javascript"></script>
+</head>
 
-<h2 align="center">Enter the name of the city to find the Weather!</h2>
+<div class="user">
+    <header class="user__header">
 
-<form action="{% url "weather:find" %}" align="center" method="GET">
-    {% csrf_token %}
-    <label for="Location">Enter the Location</label><br>
-    <br>
-    <input type="text" name="Location" id="Location"><br>
-    <label for="Country">Enter the Country Code</label>&nbsp;
-    <a href="http://www.worldatlas.com/aatlas/ctycodes.htm">Country codes</a><br>
-    <br>
-    <input type="text" name="Country" id="Country"><br>
+        <h1 class="user__title"><strong>Find the weather of any city</strong></h1><br>
+        <h2>Enter the Pincode along with Country Code</h2>
+    </header>
 
+    <form class="form" action="{% url "weather:find" %}" align="center" method="GET">
+        {% csrf_token %}
+        <div class="form__group">
+            <input type="text" class="form__input" placeholder="Pincode" name="Location" id="Location"/>
+        </div>
 
-    <br>
-    <input type="submit">
-
-
-
-
-
-
-</form>
-
+        <div class="form__group">
+            <input type="text" class="form__input" placeholder="Country" name="Country" id="Country" />
+        </div>
+        <button class="btn" type='submit'><strong>Submit</strong></button>
+    </form>
+</div>

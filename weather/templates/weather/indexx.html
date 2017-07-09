@@ -1,5 +1,11 @@
 
 {% load staticfiles %}
+<head>
+<link rel="stylesheet" type="text/css" href="{% static "weather/styles.css" %}"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy" type="text/css">
+<script src="{% static "weather/js.js" %}" type="text/javascript"></script>
+</head>
+<body>
 
 <div class="user">
     <header class="user__header">
@@ -7,7 +13,8 @@
         <h1 class="user__title"><strong>Find the weather of any city</strong></h1>
     </header>
 
-    <form class="form" action="{% url "weather:find" %}" align="center" method="GET"> >
+    <form class="form" action="{% url "weather:find" %}" align="center" method="GET">
+        {% csrf_token %}
         <div class="form__group">
             <input type="text" class="form__input" placeholder="Pincode" name="Location" id="Location"/>
         </div>
@@ -18,3 +25,4 @@
         <button class="btn" type='submit'>Submit</button>
     </form>
 </div>
+</body>

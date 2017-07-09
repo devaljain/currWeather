@@ -1,1 +1,7 @@
-<p><strong>The weather for pincode {{ code }} is:</strong> {{ tempInCel }}°C</p>
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static "weather/style/style.css" %}"/>
+</head>
+
+
+<h2 align="center"><strong>The weather for pincode {{ code }} is:</strong> {{ tempInCel }}°C</h2>
