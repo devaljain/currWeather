@@ -1,0 +1,20 @@
+
+{% load staticfiles %}
+
+<div class="user">
+    <header class="user__header">
+        <img src="{% static "weather/images/images.jpg"  %}" alt="" />
+        <h1 class="user__title"><strong>Find the weather of any city</strong></h1>
+    </header>
+
+    <form class="form" action="{% url "weather:find" %}" align="center" method="GET"> >
+        <div class="form__group">
+            <input type="text" class="form__input" placeholder="Pincode" name="Location" id="Location"/>
+        </div>
+
+        <div class="form__group">
+            <input type="email" class="form__input" placeholder="Country" name="Country" id="Country" />
+        </div>
+        <button class="btn" type='submit'>Submit</button>
+    </form>
+</div>

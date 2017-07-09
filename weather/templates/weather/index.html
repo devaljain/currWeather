@@ -1,0 +1,27 @@
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "weather/styles.css" %}"/>
+
+<h2 align="center">Enter the name of the city to find the Weather!</h2>
+
+<form action="{% url "weather:find" %}" align="center" method="GET">
+    {% csrf_token %}
+    <label for="Location">Enter the Location</label><br>
+    <br>
+    <input type="text" name="Location" id="Location"><br>
+    <label for="Country">Enter the Country Code</label>&nbsp;
+    <a href="http://www.worldatlas.com/aatlas/ctycodes.htm">Country codes</a><br>
+    <br>
+    <input type="text" name="Country" id="Country"><br>
+
+
+    <br>
+    <input type="submit">
+
+
+
+
+
+
+</form>
+
